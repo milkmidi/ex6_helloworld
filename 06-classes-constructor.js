@@ -1,53 +1,48 @@
-console.log('06-classes-constructor')
-class Animal {
+console.log('06-classes')
+class Mario {
   constructor(name){
     this.name = name;
+    this.hp = 1;
+    console.log('%cMario constructor ' + this.name, 'background: #222; color: #bada55');
   }
-  cry(){
-    console.log(this.name + 'Animal cry')
+  run(){
+    console.log('%cMario run ' + this.name, 'background: #222; color: #bada55');
   }
-  sleep(){
-    console.log(this.name + 'Animal sleep');
+  jump(){
+    console.log('%cMario jump ' + this.name, 'background: #222; color: #bada55');
   }
 }
-class Cat extends Animal {
+class BigMario extends Mario {
   constructor(name){
     super(name);
-  }
-  cry(){
-    console.log(this.name + '喵喵喵!');
+    this.hp = 2;
   }
 }
-class Dog extends Animal {
-  constructor(name){
-    super(name);
-  }
-  cry(){
-    console.log(this.name + '旺旺旺');
+class FireballMario extends BigMario {
+  fire(){
+    console.log('%cFireballMario fire', 'background: #222; color: #e74c3c');
   }
 }
-var cat = new Cat('拍拍');
-cat.cry();
-cat.sleep();
+var mario = new Mario('Mario');
+mario.run();
+mario.jump();
+console.log('mario.hp', mario.hp);
+console.log('----');
 
-var cat2 = new Cat('花花');
-cat2.cry();
-cat2.sleep();
+var bigMario = new BigMario('Mario');
+bigMario.run();
+bigMario.jump();
+console.log('bigMario.hp', bigMario.hp);
+console.log('----');
 
-var dog = new Dog();
-dog.cry();
-dog.sleep();
+var fireMario = new FireballMario('Mario');
+fireMario.run();
+fireMario.jump();
+fireMario.fire();
+console.log('bigMario.hp', bigMario.hp);
+console.log('----');
 
-/* React.Component
-class YourComponent extends React.Component {
-  constructor(props){
-    super(props)
-  }
-  componentDidMount(){
-
-  }
-  componentWillUnmount(){
-
-  }
-}
-*/
+var luigi = new Mario('Luigi');
+luigi.run();
+luigi.jump();
+console.log('luigi.hp', luigi.hp);

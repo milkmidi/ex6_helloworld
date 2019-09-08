@@ -1,25 +1,28 @@
 console.log('05-classes')
-class Animal {
-  cry(){
-    console.log('Animal cry')
+class Mario {
+  run(){
+    console.log('Mario run')
   }
-  sleep(){
-    console.log('Animal sleep');
-  }
-}
-class Cat extends Animal {
-  cry(){
-    console.log('喵喵喵!');
+  jump(){
+    console.log('Mario jump');
   }
 }
-class Dog extends Animal {
-  cry(){
-    console.log('旺旺旺');
+class BigMario extends Mario {
+}
+class FireballMario extends BigMario {
+  fire(){
+    console.log('Fire');
   }
 }
-var cat = new Cat();
-cat.cry();
-cat.sleep();
-var dog = new Dog();
-dog.cry();
-dog.sleep();
+var mario = new Mario();
+mario.run();
+mario.jump();
+
+var bigMario = new BigMario();
+bigMario.run();
+bigMario.jump();
+
+var fireMario = new FireballMario();
+fireMario.run();
+fireMario.jump();
+fireMario.fire();
